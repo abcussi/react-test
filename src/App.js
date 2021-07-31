@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+
+const initialState = {
+  loading: false,
+  count: 0,
+};
 
 function App() {
+  const myf = () => {
+    console.log("algo", state.count);
+    setstate({count : state.count+ 1});
+  };
+  const [state, setstate] = useState(initialState);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <span>{state.count}</span>
+      <button onClick={myf}>add</button>
+    </>
   );
 }
 
